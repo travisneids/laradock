@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# ensure $PWD is project root
+cd "${0%/*}"
+
+USER_ARGS="$@"
+
+docker-compose up $USER_ARGS nginx mysql
