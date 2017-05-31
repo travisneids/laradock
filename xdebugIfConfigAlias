@@ -1,0 +1,30 @@
+#!/bin/bash
+
+add_alias()
+{
+    echo "Adding alias 10.254.254.254..."
+    sudo ifconfig lo0 alias 10.254.254.254
+    echo "Alias added"
+}
+
+remove_alias()
+{
+    echo "Removing alias 10.254.254.254..."
+    sudo ifconfig lo0 -alias 10.254.254.254
+    echo "Alias removed"
+}
+
+case $@ in
+    add|ADD)
+        add_alias
+        ;;
+    remove|REMOVE)
+        remove_alias
+        ;;
+    *)
+        echo "Usage:"
+        echo "  ./xdebugIfConfigAlias add|remove"
+
+esac
+
+exit 1

@@ -5,4 +5,4 @@ cd "${0%/*}"
 
 USER_ARGS="$@"
 
-docker-compose up -d $USER_ARGS nginx mysql
+docker-compose up $USER_ARGS nginx mysql
